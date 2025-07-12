@@ -1,3 +1,4 @@
+import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import AppSidebar from "@/components/ui/AppSidebar";
 import Navbar from "@/components/ui/Navbar";
 import type { Metadata } from "next";
@@ -25,15 +26,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex`}
       >
-        <AppSidebar />
-        <main className="w-full">
-          <Navbar />
-          <div className="px-4">{children}</div>
-        </main>
+        <ThemeProvider
+          attribute={"class"}
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <AppSidebar />
+          <main className="w-full">
+            <Navbar />
+            <div className="px-4">{children}</div>
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   );
