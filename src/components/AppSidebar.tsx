@@ -3,6 +3,7 @@ import {
   SidebarContent,
   SidebarFooter,
   SidebarGroup,
+  SidebarGroupAction,
   SidebarGroupContent,
   SidebarGroupLabel,
   SidebarHeader,
@@ -16,6 +17,7 @@ import {
   ChevronUp,
   Home,
   Inbox,
+  Plus,
   Search,
   Settings,
   User2,
@@ -59,7 +61,8 @@ const items = [
 export default function AppSidebar() {
   return (
     <Sidebar collapsible="icon">
-      <SidebarHeader>
+      {/* for header */}
+      <SidebarHeader className="py-4">
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton asChild>
@@ -71,8 +74,10 @@ export default function AppSidebar() {
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
-      <SidebarSeparator></SidebarSeparator>
+      <SidebarSeparator />
+      {/* for middle */}
       <SidebarContent>
+        {/* for menu items */}
         <SidebarGroup>
           <SidebarGroupLabel>Application</SidebarGroupLabel>
           <SidebarGroupContent>
@@ -90,7 +95,15 @@ export default function AppSidebar() {
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
+        {/* for project */}
+        <SidebarGroup>
+          <SidebarGroupLabel>Projects</SidebarGroupLabel>
+          <SidebarGroupAction>
+            <Plus /> <span className="sr-only">Add Project</span>
+          </SidebarGroupAction>
+        </SidebarGroup>
       </SidebarContent>
+      {/* for footer */}
       <SidebarFooter>
         <SidebarMenu>
           <SidebarMenuItem>
