@@ -14,16 +14,23 @@ import {
 } from "@/components/ui/sidebar";
 import {
   Calendar,
+  ChevronDown,
   ChevronUp,
   Home,
   Inbox,
   Plus,
+  Projector,
   Search,
   Settings,
   User2,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "./ui/collapsible";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -101,7 +108,60 @@ export default function AppSidebar() {
           <SidebarGroupAction>
             <Plus /> <span className="sr-only">Add Project</span>
           </SidebarGroupAction>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild>
+                  <Link href={"/"}>
+                    <Projector />
+                    See All Projects
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild>
+                  <Link href={"/"}>
+                    <Plus />
+                    Add Project
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            </SidebarMenu>
+          </SidebarGroupContent>
         </SidebarGroup>
+        {/* for Collapsable */}
+        <Collapsible defaultOpen className="group/collapsible">
+          <SidebarGroup>
+            <SidebarGroupLabel asChild>
+              <CollapsibleTrigger>
+                Collapsable Group
+                <ChevronDown className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-180" />
+              </CollapsibleTrigger>
+            </SidebarGroupLabel>
+            <CollapsibleContent>
+              <SidebarGroupContent>
+                <SidebarMenu>
+                  <SidebarMenuItem>
+                    <SidebarMenuButton asChild>
+                      <Link href={"/"}>
+                        <Projector />
+                        See All Projects
+                      </Link>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                  <SidebarMenuItem>
+                    <SidebarMenuButton asChild>
+                      <Link href={"/"}>
+                        <Plus />
+                        Add Project
+                      </Link>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                </SidebarMenu>
+              </SidebarGroupContent>
+            </CollapsibleContent>
+          </SidebarGroup>
+        </Collapsible>
       </SidebarContent>
       {/* for footer */}
       <SidebarFooter>
