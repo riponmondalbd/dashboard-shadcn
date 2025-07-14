@@ -157,9 +157,9 @@ export default function singleUserPage() {
         {/* right */}
         <div className="w-full xl:w-2/3 space-y-6">
           {/* user card container */}
-          <div className="bg-primary-foreground p-4 rounded-lg">
-            <div className="">
-              <Avatar>
+          <div className="bg-primary-foreground p-4 rounded-lg space-y-2">
+            <div className="flex items-center gap-2">
+              <Avatar className="size-12">
                 <AvatarImage
                   src={
                     "https://avatars.githubusercontent.com/u/58094597?s=96&v=4"
@@ -167,7 +167,14 @@ export default function singleUserPage() {
                 />
                 <AvatarFallback>RM</AvatarFallback>
               </Avatar>
+              <h1 className="text-xl font-semibold">Ripon Mondal</h1>
             </div>
+            <p className="text-sm text-muted-foreground">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+              qui dignissimos aperiam reiciendis repellendus voluptas suscipit
+              quos, quam, alias tempora repudiandae harum in, blanditiis
+              quisquam sunt sapiente. Odit, ipsa id?
+            </p>
           </div>
           {/* chart container */}
           <div className="bg-primary-foreground p-4 rounded-lg">Card</div>
