@@ -49,12 +49,12 @@ const items = [
   },
   {
     title: "Inbox",
-    url: "#",
+    url: "/users/qw",
     icon: Inbox,
   },
   {
     title: "Calendar",
-    url: "#",
+    url: "/payments",
     icon: Calendar,
   },
   {
