@@ -56,7 +56,7 @@ export default function Navbar() {
           <DropdownMenuTrigger>
             <Avatar>
               <AvatarImage src="https://avatars.githubusercontent.com/u/58094597?s=400&u=a41c33c3968bac28de0523e673864bf6204238c9&v=4" />
-              <AvatarFallback>Ripon</AvatarFallback>
+              <AvatarFallback>RM</AvatarFallback>
             </Avatar>
           </DropdownMenuTrigger>
           <DropdownMenuContent sideOffset={10} align="end">
